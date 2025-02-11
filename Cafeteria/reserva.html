@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Delicia</title>
+    <link rel="shortcut icon" href="imagenes/cafe.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Estilo adicional para el formulario */
+        .reservation_form {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            min-height: 600px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .reservation_form ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reservation_form li {
+            margin-bottom: 20px;
+        }
+
+        .reservation_form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .reservation_form input, .reservation_form select, .reservation_form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .reservation_form button {
+            padding: 14px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .reservation_form button:hover {
+            background-color: #555;
+        }
+
+        .reservation_form h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        body {
+            padding-top: 20px;
+            background-color: #eef2f3;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav_title {
+            font-weight: 300;
+        }
+
+        .nav_link {
+            margin-left: auto;
+            padding: 0;
+            display: grid;
+            gap: 2em;
+        }
+
+        .nav_items {
+            list-style: none;
+        }
+
+        .nav_links {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav_menu {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="reserva">
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h2 class="nav_title">Cafetería Delicia</h2>
+            </div>
+            <ul class="nav_link nav_link--menu">
+                <li class="nav_items">
+                    <a href="inicio.html" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="menu.html" class="nav_links">Nuestro Menú</a>
+                </li>
+                <li class="nav_items">
+                    <a href="reserva.html" class="nav_links">Reservas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="reservation_form container">
+        <h1>Reserva tu mesa</h1>
+        <form action="/submit-reservation" method="POST">
+            <ul>
+                <li>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </li>
+                <li>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" name="date" required>
+                </li>
+                <li>
+                    <label for="time">Hora:</label>
+                    <input type="time" id="time" name="time" required>
+                </li>
+                <li>
+                    <label for="guests">Número de personas:</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </li>
+                <li>
+                    <label for="phone">Número de teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </li>
+                <li>
+                    <label for="message">Mensaje especial:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </li>
+                <li>
+                    <label for="occasion">Ocasión especial (opcional):</label>
+                    <select id="occasion" name="occasion">
+                        <option value="cumpleaños">Cumpleaños</option>
+                        <option value="aniversario">Aniversario</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </li>
+                <li>
+                    <button type="submit">Hacer Reserva</button>
+                </li>
+            </ul>
+        </form>
+    </section>
+</body>
+</html>
