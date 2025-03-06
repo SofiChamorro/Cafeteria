@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botanic Brew</title>
+    <link rel="shortcut icon" href="imagenes/cafe.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="hero3">
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h2 class="nav_title">Botanic Brew.</h2>
+            </div>
+            <ul class="nav_link nav_link--menu">
+                <li class="nav_items">
+                    <a href="inicio.html"class="nav_links"> Inicio  </a>
+                </li>
+                <li class="nav_items">
+                    <a href="menu.html"class="nav_links"> Nuestro Menu  </a>
+                </li>
+                <li class="nav_items">
+                    <a href="reserva.html"class="nav_links"> Reservas </a>
+                </li>
+                <img src="./imagenes/close.svg" class="nav_close">
+            </ul>
+            <div class="nav_menu">
+                <img src="./imagenes/menuhamburguesa.svg"class="nav_img">
+
+            </div>
+
+        </nav>
+        <section class="hero3_container container">
+            <h1 class="hero3_title">Vive la Experiencia.</h1>
+            <p class="hero3_paragraph"> Reserva y disfruta de un ambiente único. Tu momento de conexión con la naturaleza te espera. </p>
+
+        </section>
+    </header>
+    <section class="reservation_form container">
+        <h1 class="reservation_title">Reserva tu mesa</h1>
+        <p class="reservation_subtitle">Completa el formulario para asegurar tu lugar</p>
+    
+        <form action="#" method="POST">
+            <ul>
+                <li>
+                    <label for="name" class="form_label">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </li>
+                <li>
+                    <label for="email" class="form_label">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="date" class="form_label">Fecha:</label>
+                    <input type="date" id="date" name="date" required>
+                </li>
+                <li>
+                    <label for="time" class="form_label">Hora:</label>
+                    <input type="time" id="time" name="time" required>
+                </li>
+                <li>
+                    <label for="guests" class="form_label">Número de personas:</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </li>
+                <li>
+                    <label for="phone" class="form_label">Número de teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </li>
+                <li>
+                    <label for="message" class="form_label">Mensaje especial:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </li>
+                <li>
+                    <label for="occasion" class="form_label">Ocasión especial (opcional):</label>
+                    <select id="occasion" name="occasion">
+                        <option value="cumpleaños">Cumpleaños</option>
+                        <option value="aniversario">Aniversario</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="form_group">
+                <a href="#" class="cta">Hacer Reserva</a>
+            </div>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <section class="footer_container container">
+            <nav class="nav nav--footer">
+                <h2 class="nav_title">Botanic Brew</h2>
+                <ul class="nav_link nav_link--footer">
+                    <li class="nav_items">
+                        <a href="inicio.html"class="nav_links"> Inicio  </a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="menu.html"class="nav_links"> Nuestro Menu  </a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="reserva.html"class="nav_links"> Reservas </a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </section>
+        <section class="footer_content container">
+            <div class="footer_social">
+                <a href="#"class="footer_icons"><img src="./imagenes/icon1.svg"class="footer_img">
+                </a>
+                <a href="#"class="footer_icons"><img src="./imagenes/icon2.svg"class="footer_img">
+                </a>
+            </div>
+        </section> 
+    </footer>
+
+    
+        
+    
+    
+    </body>
+    </html>
