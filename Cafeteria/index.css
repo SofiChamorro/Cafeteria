@@ -433,6 +433,10 @@ body{
 .footer_social{
     color: #ffffff;
 }
+/* Modo de alto contraste */
+body.high-contrast {
+    filter: invert(1) contrast(1.2);
+}
 @media (max-width: 768px) {
     .footer_container {
         display: flex;
