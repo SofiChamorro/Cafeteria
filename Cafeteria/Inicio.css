@@ -1,0 +1,309 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position:relative;
+    display:grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: linear-gradient(180deg, #00000010 0%, #00000010 100%), url(./imagenes/cafegrande.jpg);
+    background-size: cover;
+    clip-path: circle(100% at 50% -70%);
+    z-index: -1;
+
+
+}
+.hero_container{
+    max-width: 800px;
+    display: grid;
+    --padding-container: 0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap:1em;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+.hero_title{
+    font-size:3rem;
+    color: var(--color-title);
+}
+.hero_paragraph{
+    margin-top: -40px;
+    margin-bottom: 20px;
+    color: var(--color-title);
+}
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        height: 80vh;
+        width:100%;
+        height: 300px;
+        min-height: 300px;
+        max-height:500px;
+        grid-template-rows: 100px 1fr;
+    }
+
+    .hero::before {
+        clip-path: none;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero_container {
+        max-width: 90%;
+        padding: 0px;
+        max-height: 400px;
+    }
+
+    .hero_title {
+        font-size: 2rem;
+    }
+
+    .hero_paragraph {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .nav {
+        justify-content: space-between;
+        padding: 40 0px;
+    }
+    
+    .nav_menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* Asegura que el botón de hamburguesa esté visible */
+    }
+    
+    /* Menú desplegable */
+    .nav_link--menu {
+        position: fixed;
+        top: 15px; /* Baja el menú un poco */
+        right: -100%;
+        width: 150px; /* Ancho más reducido */
+        height: auto; /* Ajusta la altura */
+        background: #abac97; /* Fondo blanco sólido */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px; /* Espaciado interno */
+        gap: 1.5em;
+        border-radius: 10px; /* Bordes redondeados */
+        transition: right 0.3s ease-in-out;
+        z-index: 1002; /* Se superpone sobre todo */
+    }
+    
+    /* Mostrar el menú cuando esté activo */
+    .nav_link--menu.active {
+        right: 10px; /* Lo posiciona cerca del borde */
+
+    }
+    
+    /* Elementos del menú */
+    .nav_items {
+        list-style: none;
+        width:100%;
+        text-align: left;
+        margin-left: 0px;
+    }
+    
+    .nav_links {
+        font-weight:200;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding:5px;
+        margin: 0;
+        text-align:center;
+    }
+    
+    /* Botón de cerrar menú */
+    .nav_close {
+        color: #ffffff;
+        display: block;
+        width: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer; /* Hace la imagen negra */
+    }
+    
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 80vh;
+        width:100%;
+    }
+
+    .hero_title {
+        font-size: 1.8rem;
+    }
+
+    .hero_paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+
+.slider_box{
+    width: 1280px;
+    height: auto;
+    margin:50px auto 0 ;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+.slider_box ul{
+    display: flex;
+    padding:0;
+    width:400%;
+    animation:slide 20s infinite alternate ease-in-out ;
+}
+.slider_box li{
+    width:100%;
+    list-style: none;
+    position: relative;
+}
+@keyframes slide {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+/*responsive sliderbox*/
+
+@media (max-width: 768px) {
+    .slider_box {
+        width: 100vw; /* Se asegura de ocupar solo el ancho de la pantalla */
+        max-width: 100vw; 
+        overflow: hidden; /* Oculta cualquier desbordamiento */
+    }
+
+    .slider_box ul {
+        display: flex;
+        padding: 0;
+        width: 400%; /* Contenedor con el tamaño de 4 imágenes */
+        animation: slide-mobile 20s infinite alternate ease-in-out;
+    }
+
+    .slider_box li {
+        flex: 0 0 100vw; /* Cada imagen ocupa toda la pantalla */
+        min-width: 100vw;
+        list-style: none;
+    }
+
+    .slider_box img {
+        width: 100vw; /* Garantiza que la imagen no sobresalga */
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+    @keyframes slide-mobile {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(0); }
+
+        25% { transform: translateX(-100vw); }
+        45% { transform: translateX(-100vw); }
+
+        50% { transform: translateX(-200vw); }
+        70% { transform: translateX(-200vw); }
+
+        75% { transform: translateX(-300vw); }
+        100% { transform: translateX(-300vw); }
+    }
+}
+
+
+
+.cta {
+    display: inline-block;
+    background-color: #abac97;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+.content{
+    background: #b99470;
+    overflow: hidden;
+    position: relative;
+    
+}
+.content__container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    align-items: center;
+    height:500px;
+}
+.content_picture{
+    max-width: 700px;
+    position: absolute;
+    right: 0;
+}
+@media (max-width: 768px) {
+    .content{
+        width: 100%; /* Asegura que no crezca más allá del viewport */
+        overflow: hidden;
+
+    }
+    .content__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* Se ajusta al contenido */
+        padding: 0; /* Elimina cualquier padding extra */
+        gap: 0; /* Asegura que no haya separación */
+    }
+
+    .content__texts {
+        margin-top: 50px;
+        width: 80%; /* Texto ocupa todo el ancho */
+        padding: 0 15px; /* Ajustamos padding lateral */
+    }
+
+    .cta {
+        margin-top: 15px; /* Espacio entre texto y botón */
+    }
+
+    .content_picture {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .content_picture video {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+    }
+}
+
+
