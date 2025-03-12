@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --padding-container: 0px 0;
+    --color-title: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* encabezado y navegacion*/
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container)
+
+}
+
+.nav{
+    --pading-container:0;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+.nav_title{
+    font-weight: 300;
+    color: var(--color-title);
+    
+}
+.nav_link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav_items{
+    list-style: none;
+}
+.nav_links{
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav_menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+
+.nav_img{
+    display: block;
+    width: 30px;
+
+}
+
+.nav_close{
+    display:var(--show,none);
+}
+
+/* contenedor hero*/
+
+body{
+    background-image: url(./imagenes/fondoprueba2.jpg);
+        background-size: cover;
+;
+
+}
+
+/*botones*/
+.cta {
+    display: inline-block;
+    background-color: #abac97;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+/*resposive para movil encabezado y navegacion*/
+
+/*pie de pagina*/
+.footer {
+    padding: 20px;
+    background-color: #abac97;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos */
+    flex-wrap: wrap;
+}
+
+/* Contenedor de los links del footer */
+.nav_footerlink--footer {
+    margin-left: auto; /* Empuja los enlaces hacia la derecha */
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em; /* Espaciado entre enlaces */
+    list-style: none; /* Quita viñetas */
+}
+
+/* Estilos de los enlaces */
+.nav_footerlinks {
+    color: #ffffff; /* Color de texto */
+    text-decoration: none; /* Quita subrayado */
+    font-weight: 300;
+    transition: color 0.3s ease-in-out;
+}
+.footer_social{
+    color: #ffffff;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+/*responsive footer*/
+@media (max-width: 768px) {
+    .nav_footerlink--footer {
+        display: flex;
+        flex-direction: column; /* Ubica los enlaces uno debajo del otro */
+        align-items:flex-start; /* Centra los enlaces */
+        gap: 1em; /* Espaciado entre enlaces */
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    .nav_footerlinks {
+        font-weight: 200;
+        font-size: small;
+        text-align: center;
+        margin-left: 0; /* Asegura que los enlaces estén bien alineados */
+    }
+    .footer_social{
+        color: #ffffff;
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+}
+/* Estilo del botón flotante */
+.contrast-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Modo Alto Contraste */
+.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+/* Cambiar colores de enlaces */
+.high-contrast a {
+    color: cyan !important;
+    text-decoration: underline !important;
+}
+
+/* Botones */
+.high-contrast button,
+.high-contrast .cta {
+    background-color: yellow !important;
+    color: black !important;
+    border: 2px solid white !important;
+}
+
+/* Inputs y formularios */
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+    background-color: black !important;
+    color: yellow !important;
+    border: 2px solid yellow !important;
+}
+
+/* Bordes de elementos importantes */
+.high-contrast .nav,
+.high-contrast .footer {
+    background-color: black !important;
+    border-top: 2px solid yellow !important;
+}
+
+/* Cambiar imágenes a escala de grises */
+.high-contrast img {
+    filter: grayscale(100%) contrast(200%);
+}
+
+/* Ajustar el color del menú */
+.high-contrast .nav_link--menu {
+    background-color: black !important;
+    border: 2px solid yellow !important;
+}

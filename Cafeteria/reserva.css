@@ -1,0 +1,272 @@
+.hero3{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position:relative;
+    display:grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+.hero3::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: linear-gradient(180deg, #00000097 0%, #00000031 100%), url(./imagenes/fondoreserva.jpg);
+    background-size: cover;
+    clip-path: circle(100% at 50% -70%);
+    z-index: -1;
+}
+.hero3_container{
+    max-width: 800px;
+    display: grid;
+    --padding-container: 0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap:1em;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+.hero3_title{
+    font-size:3rem;
+    color: var(--color-title);
+}
+.hero3_paragraph{
+    margin-top: -40px;
+    margin-bottom: 20px;
+    color: var(--color-title);
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero3 {
+        height: 80vh;
+        height: 80vh;
+        width:100%;
+        height: 300px;
+        min-height: 300px;
+        max-height:500px;
+        grid-template-rows: 100px 1fr;
+    }
+
+    .hero3::before {
+        clip-path: none;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero3_container {
+        max-width: 90%;
+        padding: 0px;
+        max-height: 400px;
+    }
+
+    .hero3_title {
+        font-size: 2rem;
+    }
+
+    .hero3_paragraph {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .nav {
+        justify-content: space-between;
+        padding: 40 0px;
+    }
+    
+    .nav_menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1001; /* Asegura que el botón de hamburguesa esté visible */
+    }
+    
+    /* Menú desplegable */
+    .nav_link--menu {
+        position: fixed;
+        top: 15px; /* Baja el menú un poco */
+        right: -100%;
+        width: 150px; /* Ancho más reducido */
+        height: auto; /* Ajusta la altura */
+        background: #abac97; /* Fondo blanco sólido */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px; /* Espaciado interno */
+        gap: 1.5em;
+        border-radius: 10px; /* Bordes redondeados */
+        transition: right 0.3s ease-in-out;
+        z-index: 1002; /* Se superpone sobre todo */
+    }
+    
+    /* Mostrar el menú cuando esté activo */
+    .nav_link--menu.active {
+        right: 10px; /* Lo posiciona cerca del borde */
+
+    }
+    
+    /* Elementos del menú */
+    .nav_items {
+        list-style: none;
+        width:100%;
+        text-align: left;
+        margin-left: 0px;
+    }
+    
+    .nav_links {
+        font-weight:200;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding:5px;
+        margin: 0;
+        text-align:center;
+    }
+    
+    /* Botón de cerrar menú */
+    .nav_close {
+        color: #ffffff;
+        display: block;
+        width: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer; /* Hace la imagen negra */
+    }
+    
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .hero3 {
+        height: 80vh;
+        width:100%;
+    }
+
+    .hero3_title {
+        font-size: 1.8rem;
+    }
+
+    .hero3_paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+/* espacio para estilo de el formulario*/
+/* Estilos generales de la sección */
+.reservation_form {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.reservation_title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #abac97;
+    margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.reservation_subtitle {
+    font-size: 16px;
+    color: #abac97;
+    margin-bottom: 20px;
+}
+
+/* Lista de elementos del formulario */
+.reservation_form ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Elementos de la lista */
+.reservation_form li {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Etiquetas de los campos */
+.form_label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #abac97;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+.reservation_form input,
+.reservation_form textarea,
+.reservation_form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Ajuste para el textarea */
+.reservation_form textarea {
+    resize: none;
+}
+
+/* Contenedor del botón */
+.form_group {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .reservation_form {
+        width: 90%;
+        max-width: 450px; /* Aumentamos el ancho máximo del formulario */
+        padding: 20px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reservation_form ul {
+        width: 100%;
+        padding: 0;
+    }
+
+    .reservation_form li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .reservation_form input,
+    .reservation_form textarea,
+    .reservation_form select {
+        width:350px;
+        text-align: center;
+    }
+
+    .form_group {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+}
