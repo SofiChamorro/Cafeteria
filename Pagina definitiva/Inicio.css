@@ -1,0 +1,305 @@
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: var(--color-title); /* Usar variable de color */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #00000010 0%, #00000010 100%), url(./imagenes/cafegrande.jpg);
+    background-size: cover;
+    clip-path: circle(100% at 50% -70%);
+    z-index: -1;
+}
+
+.hero_container {
+    max-width: 800px;
+    display: grid;
+    --padding-container: 0;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero_title {
+    font-size: 3rem;
+    color: var(--color-title); /* Usar variable de color */
+}
+
+.hero_paragraph {
+    margin-top: -40px;
+    margin-bottom: 20px;
+    color: var(--color-title); /* Usar variable de color */
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        width: 100%;
+        height: 300px;
+        min-height: 300px;
+        max-height: 500px;
+        grid-template-rows: 100px 1fr;
+    }
+
+    .hero::before {
+        clip-path: none;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero_container {
+        max-width: 90%;
+        padding: 0px;
+        max-height: 400px;
+    }
+
+    .hero_title {
+        font-size: 2rem;
+    }
+
+    .hero_paragraph {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .nav {
+        justify-content: space-between;
+        padding: 40 0px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 80vh;
+        width: 100%;
+    }
+
+    .hero_title {
+        font-size: 1.8rem;
+    }
+
+    .hero_paragraph {
+        font-size: 0.9rem;
+    }
+}
+
+.slider_btn {
+    position: absolute;
+    top: 150%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+.slider_btn img {
+    width: 30px; /* Ajusta el tamaño de los íconos */
+    height: auto;
+}
+
+.slider_btn--left {
+    left: 10px;
+}
+
+.slider_btn--right {
+    right: 10px;
+}
+
+.slider_btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slider_box {
+    width: 1280px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+.slider_box ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    transition: margin 0.5s ease-in-out;
+}
+
+.slider_box li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+
+/*responsive sliderbox*/
+
+@media (max-width: 768px) {
+    .slider_btn {
+        top: 85%;
+        width: 30px; /* Reducimos el tamaño del botón */
+        height: 30px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+    }
+
+    .slider_btn img {
+        width: 20px; /* Ajustamos el tamaño del ícono */
+        height: 20px;
+    }
+
+    .slider_btn--left {
+        left: 5px; /* Ajuste de posición */
+    }
+
+    .slider_btn--right {
+        right: 5px;
+    }
+
+    .slider_box {
+        width: 100vw; /* Se asegura de ocupar solo el ancho de la pantalla */
+        max-width: 100vw;
+        overflow: hidden; /* Oculta cualquier desbordamiento */
+    }
+
+    .slider_box ul {
+        display: flex;
+        padding: 0;
+        width: 400%; /* Contenedor con el tamaño de 4 imágenes */
+        animation: slide-mobile 20s infinite alternate ease-in-out;
+    }
+
+    .slider_box li {
+        flex: 0 0 100vw; /* Cada imagen ocupa toda la pantalla */
+        min-width: 100vw;
+        list-style: none;
+    }
+
+    .slider_box img {
+        width: 100vw; /* Garantiza que la imagen no sobresalga */
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    @keyframes slide-mobile {
+        0% { transform: translateX(0); }
+        20% { transform: translateX(0); }
+
+        25% { transform: translateX(-100vw); }
+        45% { transform: translateX(-100vw); }
+
+        50% { transform: translateX(-200vw); }
+        70% { transform: translateX(-200vw); }
+
+        75% { transform: translateX(-300vw); }
+        100% { transform: translateX(-300vw); }
+    }
+}
+
+.cta {
+    display: inline-block;
+    background-color: var(--color-cta-bg); /* Usar variable de color */
+    justify-self: center;
+    color: var(--color-cta-text); /* Usar variable de color */
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+.content {
+    background: var(--color-content-bg); /* Usar variable de color */
+    overflow: hidden;
+    position: relative;
+}
+
+.content__container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    align-items: center;
+    height: 500px;
+}
+
+.content_picture {
+    max-width: 700px;
+    position: absolute;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%; /* Asegura que no crezca más allá del viewport */
+        overflow: hidden;
+    }
+
+    .content__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* Se ajusta al contenido */
+        padding: 0; /* Elimina cualquier padding extra */
+        gap: 0; /* Asegura que no haya separación */
+    }
+
+    .content__texts {
+        margin-top: 50px;
+        width: 80%; /* Texto ocupa todo el ancho */
+        padding: 0 15px; /* Ajustamos padding lateral */
+    }
+
+    .cta {
+        margin-top: 15px; /* Espacio entre texto y botón */
+    }
+
+    .content_picture {
+        position: static;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .content_picture video {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+    }
+}
